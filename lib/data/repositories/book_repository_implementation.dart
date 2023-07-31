@@ -1,5 +1,6 @@
 import 'package:edspert_16/data/datasource/book_remote_datasource.dart';
 import 'package:edspert_16/data/model/book_model.dart';
+import 'package:edspert_16/data/model/detail_book_model.dart';
 import 'package:edspert_16/domain/repositories/book_repository.dart';
 
 class BookRepositoryImpl implements BookRepository{
@@ -9,4 +10,7 @@ class BookRepositoryImpl implements BookRepository{
 
   @override
   Future<List<BookModel>> getAllNewBooks() async => await remoteDataSource.getAllNewBooks();
+  
+  @override
+  Future<DetailBookModel> getDetailBook(String isbn13) async => await remoteDataSource.getDetailBook(isbn13);
 }
